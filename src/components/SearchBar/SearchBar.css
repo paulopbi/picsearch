@@ -37,7 +37,7 @@
 	background-color: transparent;
 	border: none;
 	outline: none;
-	font-size: 1rem;
+	font-size: var(--font-sm);
 	color: var(--white);
 }
 
@@ -45,4 +45,14 @@
 	color: var(--muted);
 	font-size: 0.775rem;
 	font-weight: 500;
+}
+
+@media screen and (min-width: 640px) {
+	.search-input {
+		font-size: var(--font-md);
+	}
+
+	.search-input::placeholder {
+		font-size: var(--font-md);
+	}
 }
