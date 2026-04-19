@@ -18,6 +18,17 @@
 	--background: #171918;
 	--surface: #202322;
 	--accent: #45b175;
+
+	/* font size */
+	--font-xs: 0.625rem; /* 10px */
+	--font-sm: 0.775rem; /* 12.4px */
+	--font-md: 1rem; /* 16px */
+	--font-lg: 1.25rem; /* 20px */
+	--font-xl: 1.5rem; /* 24px */
+	--font-2xl: 2rem; /* 32px */
+	--font-3xl: 2.5rem; /* 40px */
+	--font-4xl: 3rem; /* 48px */
+	--font-5xl: 4rem; /* 64px */
 }
 
 body {
