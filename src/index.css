@@ -1,0 +1,27 @@
+/* roboto font */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* reset */
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	/* colors */
+	--white: #fff;
+	--muted: #a1a1aa;
+	--black: #000;
+	--background: #171918;
+	--surface: #202322;
+	--accent: #45b175;
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+	background-color: var(--background);
+	color: var(--white);
+}
