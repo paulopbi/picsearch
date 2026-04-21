@@ -1,4 +1,4 @@
-export interface IUnsplashAPI {
+export interface IUnsplashRandomPhotos {
 	id: string;
 	slug: string;
 	alt_description: string;
@@ -16,6 +16,7 @@ export interface IUnsplashAPI {
 		download_location: string;
 	};
 	downloads: number;
+	likes: number;
 	user: {
 		id: string;
 		name: string;
