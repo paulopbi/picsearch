@@ -10,7 +10,7 @@
 }
 
 .search-form {
-	max-width: 300px;
+	max-width: 350px;
 	width: 100%;
 	display: flex;
 	align-items: center;
@@ -19,6 +19,11 @@
 	background-color: var(--surface);
 	padding: 16px;
 	border-radius: 999px;
+	transition: box-shadow 0.2s ease-in-out;
+}
+
+.search-form:focus-within {
+	box-shadow: 0 0 10px var(--accent);
 }
 
 .search-icon {
