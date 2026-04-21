@@ -34,3 +34,9 @@ export interface IUnsplashRandomPhotos {
 		};
 	};
 }
+
+export interface IUnsplashSearchResponse {
+	total: number;
+	total_pages: number;
+	results: IUnsplashRandomPhotos[];
+}
