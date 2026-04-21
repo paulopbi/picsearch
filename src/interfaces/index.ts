@@ -1,4 +1,4 @@
-export interface IUnsplashRandomPhotos {
+export interface IUnsplashPhotos {
 	id: string;
 	slug: string;
 	alt_description: string;
@@ -38,5 +38,5 @@ export interface IUnsplashRandomPhotos {
 export interface IUnsplashSearchResponse {
 	total: number;
 	total_pages: number;
-	results: IUnsplashRandomPhotos[];
+	results: IUnsplashPhotos[];
 }

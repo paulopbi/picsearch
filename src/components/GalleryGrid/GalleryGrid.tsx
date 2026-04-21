@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Heart, ImageDown } from "lucide-react";
 import { useQueryTerm } from "../../context/QueryTermContext.tsx";
 import type {
-	IUnsplashRandomPhotos,
+	IUnsplashPhotos,
 	IUnsplashSearchResponse,
 } from "../../interfaces";
 import { getData } from "../../services/api";
@@ -14,18 +14,18 @@ const GalleryGrid = () => {
 	const apiKey = import.meta.env.VITE_API_KEY ?? "";
 
 	const urls = {
-		random: `https://api.unsplash.com/photos/random?client_id=${apiKey}&count=11`,
-		search: `https://api.unsplash.com/search/photos?client_id=${apiKey}&query=${queryValue}&per_page=11`,
+		photos: `https://api.unsplash.com/photos?client_id=${apiKey}&per_page=15&page=1`,
+		search: `https://api.unsplash.com/search/photos?client_id=${apiKey}&query=${queryValue}&per_page=15&page=1`,
 	};
 
-	const { data, isLoading, error } = useQuery<IUnsplashRandomPhotos[]>({
+	const { data, isLoading, error } = useQuery<IUnsplashPhotos[]>({
 		queryKey: ["photos", queryValue],
 		queryFn: async () => {
 			if (queryValue) {
 				const response = await getData<IUnsplashSearchResponse>(urls.search);
 				return response.results;
 			}
-			return await getData<IUnsplashRandomPhotos[]>(urls.random);
+			return await getData<IUnsplashPhotos[]>(urls.photos);
 		},
 	});
 
