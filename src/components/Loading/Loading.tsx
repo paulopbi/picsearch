@@ -1,7 +1,6 @@
 import "./Loading.css";
 
 const Loading = () => {
-	//three dots loading with animation style with custom css classes
 	return (
 		<div className="loading-container">
 			<div className="loading-dots">
