@@ -1,5 +1,5 @@
 import { Search } from "lucide-react";
-import { useState } from "react";
+import { type ChangeEvent, useState } from "react";
 import { useQueryTerm } from "../../context/QueryTermContext.tsx";
 import useDebounce from "../../hooks/useDebounce";
 import "./SearchBar.css";
@@ -11,16 +11,21 @@ const SearchBar = () => {
 	const debouncedValue = useDebounce(search);
 
 	setQueryValue(debouncedValue);
+
+	const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
+		setSearch(e.target.value);
+	};
+
 	return (
 		<div className="search-container">
 			<form className="search-form">
 				<Search className="search-icon" />
 				<input
-					placeholder="Write something"
+					placeholder="Search for a photo..."
 					type="search"
 					className="search-input"
 					value={search}
-					onChange={({ target }) => setSearch(target.value)}
+					onChange={handleSearch}
 				/>
 			</form>
 		</div>
