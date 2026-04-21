@@ -1,20 +1,36 @@
 import { useQuery } from "@tanstack/react-query";
-import { DownloadIcon, ImageDown } from "lucide-react";
-import type { IUnsplashAPI } from "../../interfaces";
+import { Heart, ImageDown } from "lucide-react";
+import { useQueryTerm } from "../../context/QueryTermContext.tsx";
+import type {
+	IUnsplashRandomPhotos,
+	IUnsplashSearchResponse,
+} from "../../interfaces";
 import { getData } from "../../services/api";
+import Loading from "../Loading/Loading";
 import "./GalleryGrid.css";
 
 const GalleryGrid = () => {
+	const { queryValue } = useQueryTerm();
 	const apiKey = import.meta.env.VITE_API_KEY ?? "";
-	const randomImageUrl = `https://api.unsplash.com/photos/random?client_id=${apiKey}&count=11`;
 
-	const { data, isLoading, error } = useQuery({
-		queryKey: ["random"],
-		queryFn: () => getData<IUnsplashAPI[]>(randomImageUrl),
+	const urls = {
+		random: `https://api.unsplash.com/photos/random?client_id=${apiKey}&count=11`,
+		search: `https://api.unsplash.com/search/photos?client_id=${apiKey}&query=${queryValue}&per_page=11`,
+	};
+
+	const { data, isLoading, error } = useQuery<IUnsplashRandomPhotos[]>({
+		queryKey: ["photos", queryValue],
+		queryFn: async () => {
+			if (queryValue) {
+				const response = await getData<IUnsplashSearchResponse>(urls.search);
+				return response.results;
+			}
+			return await getData<IUnsplashRandomPhotos[]>(urls.random);
+		},
 	});
 
 	if (isLoading) {
-		return <div>Loading...</div>;
+		return <Loading />;
 	}
 
 	if (error) {
@@ -25,7 +41,7 @@ const GalleryGrid = () => {
 		<div className="container">
 			{/* grid container */}
 			<div className="gallery">
-				{data?.map(({ id, urls, alt_description, downloads, links, user }) => (
+				{data?.map(({ id, urls, alt_description, likes, links, user }) => (
 					<div key={id} className="gallery-card">
 						{/* background image */}
 						<img
@@ -37,12 +53,9 @@ const GalleryGrid = () => {
 
 						{/* top */}
 						<div className="gallery-card-top">
-							<div
-								className="gallery-card-info"
-								title={`Downloads: ${downloads}`}
-							>
-								<DownloadIcon size={18} />
-								<span>{downloads}</span>
+							<div className="gallery-card-info" title={`Likes: ${likes}`}>
+								<Heart size={18} />
+								<span>{likes ?? "0"}</span>
 							</div>
 							<a
 								href={links.download}
