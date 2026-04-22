@@ -9,8 +9,11 @@ import type {
 import { getData } from "../../services/api.ts";
 import Card from "../Card/Card.tsx";
 import CardContent from "../Card/CardContent/CardContent.tsx";
+import CardDownload from "../Card/CardDownload/CardDownload.tsx";
 import CardHeader from "../Card/CardHeader/CardHeader.tsx";
 import CardImage from "../Card/CardImage/CardImage.tsx";
+import CardTitle from "../Card/CardTitle/CardTitle.tsx";
+import CardUser from "../Card/CardUser/CardUser.tsx";
 import Loading from "../Loading/Loading.tsx";
 import "./Gallery.css";
 
@@ -52,15 +55,29 @@ const Gallery = () => {
 					? data.results.map((props) => (
 							<Card key={props.id}>
 								<CardImage {...props} />
-								<CardHeader {...props} />
-								<CardContent {...props} />
+
+								<CardHeader>
+									<CardDownload {...props} />
+								</CardHeader>
+
+								<CardContent>
+									<CardTitle {...props} />
+									<CardUser {...props} />
+								</CardContent>
 							</Card>
 						))
 					: data.map((props) => (
 							<Card key={props.id}>
 								<CardImage {...props} />
-								<CardHeader {...props} />
-								<CardContent {...props} />
+
+								<CardHeader>
+									<CardDownload {...props} />
+								</CardHeader>
+
+								<CardContent>
+									<CardTitle {...props} />
+									<CardUser {...props} />
+								</CardContent>
 							</Card>
 						))}
 			</div>

@@ -1,0 +1,20 @@
+.card-header-download {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	outline: none;
+	border: 2px solid transparent;
+	border-radius: var(--radius-infinite);
+	backdrop-filter: var(--blur-sm);
+	color: var(--white);
+	background-color: var(--background-transparent);
+	cursor: pointer;
+	transition: var(--transition-fast);
+}
+
+.card-header-download:hover {
+	background-color: var(--accent);
+	box-shadow: var(--shadow-md);
+	transform: scale(1.1);
+}

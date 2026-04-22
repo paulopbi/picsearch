@@ -1,0 +1,19 @@
+.card-header-likes {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	padding: 8px 16px;
+	border-radius: var(--radius-md);
+	font-size: var(--font-sm);
+	font-weight: 500;
+	backdrop-filter: var(--blur-sm);
+	color: var(--red);
+	background-color: var(--background-transparent);
+}
+
+.card-header-likes > span {
+	font-size: var(--font-sm);
+	font-weight: 500;
+	color: var(--white);
+}

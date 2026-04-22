@@ -1,0 +1,23 @@
+.card-title {
+	position: relative;
+	text-wrap: wrap;
+	font-size: var(--font-lg);
+	font-weight: 700;
+	line-height: 1.4em;
+	padding-left: 8px;
+	color: var(--white);
+}
+
+.card-title::before {
+	content: "";
+	width: 2px;
+	height: 100%;
+	border-radius: var(--radius-infinite);
+	display: block;
+	position: absolute;
+	left: -7px;
+	top: 0;
+	z-index: 10;
+	opacity: 0.6;
+	background-color: var(--accent);
+}
