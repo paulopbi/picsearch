@@ -1,9 +1,0 @@
-/* grid container */
-.gallery {
-	display: grid;
-	grid-auto-rows: 500px;
-	grid-auto-flow: dense;
-	grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-	gap: 32px;
-	margin-bottom: 64px;
-}
