@@ -1,4 +1,4 @@
-import GalleryGrid from "./components/GalleryGrid/GalleryGrid.tsx";
+import Gallery from "./components/Gallery/Gallery.tsx";
 import Heading from "./components/Heading/Heading.tsx";
 import SearchBar from "./components/SearchBar/SearchBar.tsx";
 import { QueryTermProvider } from "./context/QueryTermContext.tsx";
@@ -9,7 +9,7 @@ function App() {
 			<main>
 				<SearchBar />
 				<Heading />
-				<GalleryGrid />
+				<Gallery />
 			</main>
 		</QueryTermProvider>
 	);
