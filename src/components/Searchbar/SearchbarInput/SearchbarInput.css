@@ -1,0 +1,15 @@
+.search-input {
+	flex: 1;
+	height: 100%;
+	width: 100%;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	font-size: var(--font-md);
+	color: var(--white);
+}
+
+.search-input::placeholder {
+	font-size: var(--font-md);
+	color: var(--muted);
+}

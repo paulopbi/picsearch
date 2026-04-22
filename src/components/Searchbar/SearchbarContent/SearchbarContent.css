@@ -1,0 +1,16 @@
+.search-content {
+	max-width: 350px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	background-color: var(--surface);
+	padding: 16px;
+	border-radius: var(--radius-infinite);
+	transition: box-shadow var(--transition-fast);
+}
+
+.search-content:focus-within {
+	box-shadow: var(--shadow-sm) var(--accent);
+}

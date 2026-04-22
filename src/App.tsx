@@ -1,17 +1,17 @@
 import Gallery from "./components/Gallery/Gallery.tsx";
 import Heading from "./components/Heading/Heading.tsx";
-import SearchBar from "./components/SearchBar/SearchBar.tsx";
+import Searchbar from "./components/Searchbar/Searchbar.tsx";
 import { QueryTermProvider } from "./context/QueryTermContext.tsx";
 
 function App() {
 	return (
-		<QueryTermProvider>
-			<main>
-				<SearchBar />
+		<main>
+			<QueryTermProvider>
+				<Searchbar />
 				<Heading />
 				<Gallery />
-			</main>
-		</QueryTermProvider>
+			</QueryTermProvider>
+		</main>
 	);
 }
 
