@@ -15,6 +15,6 @@
 
 .card-header-download:hover {
 	background-color: var(--accent);
-	box-shadow: var(--shadow-md);
+	box-shadow: var(--shadow-md) var(--accent);
 	transform: scale(1.1);
 }
