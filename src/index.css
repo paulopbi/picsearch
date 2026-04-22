@@ -55,9 +55,9 @@
 	--radius-infinite: 999px;
 
 	/* box shadow */
-	--shadow-sm: 0 0 10px var(--accent);
-	--shadow-md: 0 0 20px var(--accent);
-	--shadow-lg: 0 0 30px var(--accent);
+	--shadow-sm: 0 0 10px;
+	--shadow-md: 0 0 20px;
+	--shadow-lg: 0 0 30px;
 }
 
 body {
