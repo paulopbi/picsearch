@@ -1,26 +1,17 @@
-export const quickButtonsContent = [
+import GithubIcon from "../components/Icons/GithubIcon";
+import InstagramIcon from "../components/Icons/InstagramIcon";
+import LinkedinIcon from "../components/Icons/LinkedinIcon";
+
+export const socialLinks = [
+	{ href: "https://github.com/paulopbi", label: "GitHub", icon: GithubIcon },
 	{
-		label: "Nature 🌳",
-		value: "Nature",
+		href: "https://www.linkedin.com/in/paulopbi/",
+		label: "Linkedin",
+		icon: LinkedinIcon,
 	},
 	{
-		label: "Car 🚘",
-		value: "Car",
-	},
-	{
-		label: "Animals 🦄",
-		value: "Animals",
-	},
-	{
-		label: "Buildings 🏢",
-		value: "Buildings",
-	},
-	{
-		label: "Sports ⚽",
-		value: "Sports",
-	},
-	{
-		label: "People 👥",
-		value: "People",
+		href: "https://www.instagram.com/xyz.paulovictor",
+		label: "Instagram",
+		icon: InstagramIcon,
 	},
 ];
