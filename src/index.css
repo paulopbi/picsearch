@@ -44,6 +44,20 @@
 	--blur-xl: blur(16px);
 	--blur-2xl: blur(20px);
 	--blur-3xl: blur(24px);
+
+	/* border radius */
+	--radius-sm: 4px;
+	--radius-md: 8px;
+	--radius-lg: 12px;
+	--radius-xl: 16px;
+	--radius-2xl: 20px;
+	--radius-3xl: 24px;
+	--radius-infinite: 999px;
+
+	/* box shadow */
+	--shadow-sm: 0 0 10px var(--accent);
+	--shadow-md: 0 0 20px var(--accent);
+	--shadow-lg: 0 0 30px var(--accent);
 }
 
 body {
