@@ -5,38 +5,3 @@
 	grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 	gap: 32px;
 }
-
-.gallery-pagination {
-	display: flex;
-	justify-content: center;
-	gap: 24px;
-	margin-block: 64px;
-}
-
-.gallery-pagination-button {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	gap: 8px;
-	padding: 8px 16px;
-	border: none;
-	border-radius: var(--radius-infinite);
-	cursor: pointer;
-	font-size: var(--font-sm);
-	font-weight: 700;
-	color: var(--white);
-	background-color: var(--surface);
-	transition: all var(--transition-fast);
-}
-
-.gallery-pagination-button:hover {
-	background-color: var(--accent);
-	box-shadow: var(--shadow-sm);
-}
-
-.gallery-pagination-button:disabled {
-	cursor: not-allowed;
-	opacity: 0.5;
-	box-shadow: none;
-	background-color: var(--surface);
-}

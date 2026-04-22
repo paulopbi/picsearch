@@ -1,5 +1,4 @@
 import { useQuery } from "@tanstack/react-query";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import { useQueryTerm } from "../../context/QueryTermContext.tsx";
 import type {
@@ -16,6 +15,7 @@ import CardTitle from "../Card/CardTitle/CardTitle.tsx";
 import CardUser from "../Card/CardUser/CardUser.tsx";
 import Loading from "../Loading/Loading.tsx";
 import "./Gallery.css";
+import PaginationButtons from "./PaginationButtons/PaginationButtons.tsx";
 
 const Gallery = () => {
 	const [page, setPage] = useState(1);
@@ -82,24 +82,11 @@ const Gallery = () => {
 						))}
 			</div>
 
-			<div className="gallery-pagination">
-				<button
-					type="button"
-					className="gallery-pagination-button"
-					onClick={() => setPage((prev) => prev - 1)}
-					disabled={page === 1}
-				>
-					<ChevronLeft size={20} /> Previous
-				</button>
-				<button
-					type="button"
-					className="gallery-pagination-button"
-					onClick={() => setPage((prev) => prev + 1)}
-					disabled={"total_pages" in data && page === data.total_pages}
-				>
-					Next <ChevronRight size={20} />
-				</button>
-			</div>
+			<PaginationButtons
+				disableLeftButton={page === 1}
+				disableRightButton={"total_pages" in data && page === data.total_pages}
+				setPage={setPage}
+			/>
 		</div>
 	);
 };
