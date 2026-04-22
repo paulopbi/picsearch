@@ -1,3 +1,4 @@
+import Footer from "./components/Footer/Footer.tsx";
 import Gallery from "./components/Gallery/Gallery.tsx";
 import Heading from "./components/Heading/Heading.tsx";
 import Searchbar from "./components/Searchbar/Searchbar.tsx";
@@ -11,6 +12,7 @@ function App() {
 				<Heading />
 				<Gallery />
 			</QueryTermProvider>
+			<Footer />
 		</main>
 	);
 }
