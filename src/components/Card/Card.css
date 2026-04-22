@@ -1,0 +1,10 @@
+.card {
+	position: relative;
+	overflow: hidden;
+	border-radius: 12px;
+	transition: all var(--transition-normal);
+}
+
+.card:hover {
+	transform: translateY(-10px);
+}
