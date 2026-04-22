@@ -12,13 +12,13 @@
 
 :root {
 	/* colors */
-	--white: #fff;
-	--muted: #a1a1aa;
-	--black: #000;
-	--background: #171918;
-	--surface: #202322;
-	--accent: #45b175;
-	--red: #ef4444;
+	--white: hsl(0, 0%, 100%);
+	--muted: hsl(240, 5%, 65%);
+	--black: hsl(0, 0%, 0%);
+	--background: hsl(150, 4%, 9%);
+	--surface: hsl(160, 4%, 13%);
+	--accent: hsl(147, 44%, 48%);
+	--red: hsl(0, 84%, 60%);
 	--background-transparent: rgba(0, 0, 0, 0.5);
 
 	/* font size */
