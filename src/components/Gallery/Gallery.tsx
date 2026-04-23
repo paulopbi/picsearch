@@ -40,6 +40,10 @@ const Gallery = () => {
 		},
 	});
 
+	const isLastPage =
+		data !== undefined && "total_pages" in data && page === data.total_pages;
+	const isFirstPage = page === 1;
+
 	if (isLoading) {
 		return <Loading />;
 	}
