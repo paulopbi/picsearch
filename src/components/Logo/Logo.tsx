@@ -4,7 +4,7 @@ import "./Logo.css";
 const Logo = () => {
 	return (
 		<h6 className="logo">
-			Flashdash <Aperture />
+			Picsearch <Aperture />
 		</h6>
 	);
 };
