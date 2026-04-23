@@ -1,75 +1,94 @@
-# React + TypeScript + Vite
+<p align="center">
+  <img src="./public/favicon-48.svg" alt="Picsearch Icon">
+  <br>  
+  Picsearch
+  <br>
+  <a href="" target="_blank">Linkedin</a> • 
+  <a href="" target="_blank">Github</a> •  
+  <a href="" target="_blank">Demo</a> • 
+  <a href="" target="_blank">Repository</a>
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Picsearch
 
-Currently, two official plugins are available:
+**Discover** stunning high-quality photos effortlessly, **Picsearch** is crafted from scratch to **ignite** your creativity, **search** for any image you want and **download** it with just a few clicks!
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This project uses the **Unsplash API** to get the images, check the [Unsplash docs](https://unsplash.com/docs) to learn more.
 
-## React Compiler
+## Demo
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+![Demo](./public/cover.png)
 
-Note: This will impact Vite dev & build performances.
+> Demo screenshot
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Unsplash API**: All images are from the [Unsplash API](https://unsplash.com/documentation).
+- **API Authentication**: Uses Authorization header for API calls.
+- **Debounce on search**: Prevents the user from spamming the search input.
+- **Search Input**: Search for any image you want and get instant results.
+- **Download Images**: Download any image with just a click.
+- **Pagination**: Load and navigate through images seamlessly.
+- **Cache System**: Uses Tanstack Query for data caching, preventing unnecessary API calls.
+- **Lazy Loading**: Images have the `loading="lazy"` attribute.
+- **Disabled Buttons**: Prevents the user from spamming the buttons, which avoids unnecessary API calls.
+- **Loading and Error handler**: Handles loading and errors from external API calls.
+- **Glass Effect**: Creates a modern and visually appealing interface.
+- **Neon Effect**: With css `box-shadow` it create a neon lighting effect on `hover`.
+- **Typeguards with Typescript**: Ensures type safety between components.
+- **Fully Responsive**: Works flawlessly on all screen sizes, from mobile to desktop.
+- **Context API**: Uses React Context for sharing global state between components.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Technologies Used
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Tanstack Query**: For data fetching and state management.
+- **React**: UI library for building user interfaces.
+- **TypeScript**: For static typing.
+- **Vite**: Build tool and development server.
+- **CSS**: Styling for responsive design.
+- **Lucide React**: For beautiful icons.
+- **PNPM**: Package manager.
+- **Biome**: Linting and formatting.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## How to Run
+
+To run this project locally, follow these steps:
+
+1. Clone the repository
+
+```bash
+# clone the repository
+git clone https://github.com/paulopbi/picsearch
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Configure the `.env` file in the root of the project:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# add your API key from Unsplash API  
+VITE_API_KEY=<YOUR_API_KEY>
+# Unsplash API Endpoint
+VITE_BASE_URL=https://api.unsplash.com
 ```
+
+> [!NOTE]
+> You can access the `.env.example` file to see the variables that need to be configured.
+
+3. Install dependencies:
+
+I'm currently using `pnpm`, but you can use `npm` if you prefer. 
+
+```bash
+# will install all dependencies in the project
+pnpm install
+```
+
+4. Start the development server:
+
+```bash
+# will start the server at http://localhost:5173/
+pnpm dev
+```
+
+## License
+
+This project uses the **MIT License**, read the [License File](./LICENSE) for more information.
