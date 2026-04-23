@@ -1,3 +1,7 @@
+.gallery-container {
+	min-height: 100dvh;
+}
+
 .gallery {
 	display: grid;
 	grid-auto-rows: 450px;

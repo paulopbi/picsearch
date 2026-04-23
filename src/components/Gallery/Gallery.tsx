@@ -6,6 +6,7 @@ import type {
 	IUnsplashSearchResponse,
 } from "../../interfaces/index.ts";
 import { API_KEY, BASE_URL, getData } from "../../services/api.ts";
+import ErrorMessage from "../ErrorMessage/ErrorMessage.tsx";
 import Loading from "../Loading/Loading.tsx";
 import PhotoCard from "../PhotoCard/PhotoCard.tsx";
 import "./Gallery.css";
@@ -35,12 +36,9 @@ const Gallery = () => {
 		data !== undefined && "total_pages" in data && page === data.total_pages;
 	const isFirstPage = page === 1;
 
-	if (error) {
-		return <div>Error: {error.message}</div>;
-	}
-
 	return (
-		<div className="container">
+		<section className="container gallery-container">
+			{error && <ErrorMessage message={error.message} />}
 			{isLoading && <Loading />}
 			<div className="gallery">
 				{Array.isArray(data)
@@ -50,12 +48,14 @@ const Gallery = () => {
 						))}
 			</div>
 
-			<PaginationButtons
-				disableLeftButton={isFirstPage}
-				disableRightButton={isLastPage}
-				setPage={setPage}
-			/>
-		</div>
+			{!error && !isLoading && (
+				<PaginationButtons
+					disableLeftButton={isFirstPage}
+					disableRightButton={isLastPage}
+					setPage={setPage}
+				/>
+			)}
+		</section>
 	);
 };
 
