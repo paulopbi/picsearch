@@ -1,15 +1,41 @@
+import type { IUnsplashPhotos, IUnsplashSearchResponse } from "../interfaces";
+
 export const API_KEY = import.meta.env.VITE_API_KEY ?? "";
 export const BASE_URL =
 	import.meta.env.VITE_BASE_URL ?? "https://api.unsplash.com";
 
-export const getData = async <T>(url: string) => {
-	const req = await fetch(url);
+const headersConfig = {
+	Authorization: `Client-ID ${API_KEY}`,
+	"Accept-Version": "v1",
+};
 
-	if (!req.ok) {
-		throw new Error("Failed to fetch images");
+export const searchImages = async (query: string, page: number) => {
+	const URL = `${BASE_URL}/search/photos?query=${query}&per_page=20&page=${page}`;
+	const response = await fetch(URL, {
+		headers: headersConfig,
+	});
+
+	if (!response.ok) {
+		throw new Error("Failed to search image, try again later.");
 	}
 
-	const data = req.json() as Promise<T>;
+	const data = response.json() as Promise<IUnsplashSearchResponse>;
+
+	return data;
+};
+
+export const getImages = async (page: number) => {
+	const URL = `${BASE_URL}/photos?page=${page}&per_page=20`;
+
+	const response = await fetch(URL, {
+		headers: headersConfig,
+	});
+
+	if (!response.ok) {
+		throw new Error("Failed to load images, try again later.");
+	}
+
+	const data = response.json() as Promise<IUnsplashPhotos[]>;
 
 	return data;
 };
