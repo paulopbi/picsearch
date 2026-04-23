@@ -63,8 +63,8 @@ const Gallery = () => {
 			</div>
 
 			<PaginationButtons
-				disableLeftButton={page === 1}
-				disableRightButton={"total_pages" in data && page === data.total_pages}
+				disableLeftButton={isFirstPage}
+				disableRightButton={isLastPage}
 				setPage={setPage}
 			/>
 		</div>
