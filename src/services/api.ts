@@ -1,3 +1,7 @@
+export const API_KEY = import.meta.env.VITE_API_KEY ?? "";
+export const BASE_URL =
+	import.meta.env.VITE_BASE_URL ?? "https://api.unsplash.com";
+
 export const getData = async <T>(url: string) => {
 	const req = await fetch(url);
 
