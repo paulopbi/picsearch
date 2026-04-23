@@ -35,16 +35,13 @@ const Gallery = () => {
 		data !== undefined && "total_pages" in data && page === data.total_pages;
 	const isFirstPage = page === 1;
 
-	if (isLoading) {
-		return <Loading />;
-	}
-
 	if (error) {
 		return <div>Error: {error.message}</div>;
 	}
 
 	return (
 		<div className="container">
+			{isLoading && <Loading />}
 			<div className="gallery">
 				{Array.isArray(data)
 					? data?.map((props) => <PhotoCard key={props.id} {...props} />)
