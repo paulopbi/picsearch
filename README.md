@@ -3,10 +3,10 @@
   <br>  
   Picsearch
   <br>
-  <a href="" target="_blank">Linkedin</a> • 
-  <a href="" target="_blank">Github</a> •  
-  <a href="" target="_blank">Demo</a> • 
-  <a href="" target="_blank">Repository</a>
+  <a href="https://www.linkedin.com/in/paulopbi/" target="_blank">Linkedin</a> • 
+  <a href="https://github.com/paulopbi/" target="_blank">Github</a> •  
+  <a href="https://picsearch.vercel.app/" target="_blank">Demo</a> • 
+  <a href="https://github.com/paulopbi/picsearch" target="_blank">Repository</a>
 </p>
 
 # Picsearch
