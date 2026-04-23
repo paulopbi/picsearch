@@ -1,4 +1,7 @@
-import type { IUnsplashPhotos, IUnsplashSearchResponse } from "../interfaces";
+import type {
+	UnsplashPhotoResponse,
+	UnsplashSearchResponse,
+} from "../interfaces";
 
 export const API_KEY = import.meta.env.VITE_API_KEY ?? "";
 export const BASE_URL =
@@ -19,7 +22,7 @@ export const searchImages = async (query: string, page: number) => {
 		throw new Error("Failed to search image, try again later.");
 	}
 
-	const data = response.json() as Promise<IUnsplashSearchResponse>;
+	const data = response.json() as Promise<UnsplashSearchResponse>;
 
 	return data;
 };
@@ -35,7 +38,7 @@ export const getImages = async (page: number) => {
 		throw new Error("Failed to load images, try again later.");
 	}
 
-	const data = response.json() as Promise<IUnsplashPhotos[]>;
+	const data = response.json() as Promise<UnsplashPhotoResponse[]>;
 
 	return data;
 };

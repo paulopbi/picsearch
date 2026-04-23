@@ -1,10 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { useQueryTerm } from "../../context/QueryTermContext.tsx";
-import type {
-	IUnsplashPhotos,
-	IUnsplashSearchResponse,
-} from "../../interfaces/index.ts";
 import { getImages, searchImages } from "../../services/api.ts";
 import ErrorMessage from "../ErrorMessage/ErrorMessage.tsx";
 import Loading from "../Loading/Loading.tsx";
@@ -15,14 +11,11 @@ import PaginationButtons from "./PaginationButtons/PaginationButtons.tsx";
 const Gallery = () => {
 	const [page, setPage] = useState(1);
 	const { queryValue } = useQueryTerm();
-	const { data, isLoading, error } = useQuery<
-		IUnsplashPhotos[] | IUnsplashSearchResponse
-	>({
+	const { data, isLoading, error } = useQuery({
 		queryKey: ["photos", queryValue, page],
 		queryFn: async () => {
-			if (queryValue) {
-				return await searchImages(queryValue, page);
-			}
+			if (queryValue) return await searchImages(queryValue, page);
+
 			return await getImages(page);
 		},
 	});

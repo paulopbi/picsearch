@@ -1,42 +1,52 @@
-export interface IUnsplashPhotos {
+export interface UnsplashPhotoUrls {
+	raw: string;
+	full: string;
+	regular: string;
+	small: string;
+	thumb: string;
+}
+
+export interface UnsplashPhotoLinks {
+	self: string;
+	html: string;
+	download: string;
+	download_location: string;
+}
+
+export interface UnsplashUserLinks {
+	self: string;
+	html: string;
+	photos: string;
+	likes: string;
+}
+
+export interface UnsplashUserProfileImage {
+	small: string;
+	medium: string;
+	large: string;
+}
+
+export interface UnsplashUser {
+	id: string;
+	name: string;
+	username: string;
+	profile_image: UnsplashUserProfileImage;
+	links: UnsplashUserLinks;
+}
+
+export interface UnsplashPhotoResponse {
 	id: string;
 	slug: string;
 	alt_description: string;
-	urls: {
-		raw: string;
-		full: string;
-		regular: string;
-		small: string;
-		thumb: string;
-	};
-	links: {
-		self: string;
-		html: string;
-		download: string;
-		download_location: string;
-	};
+	urls: UnsplashPhotoUrls;
+	links: UnsplashPhotoLinks;
 	downloads: number;
 	likes: number;
-	user: {
-		id: string;
-		name: string;
-		username: string;
-		profile_image: {
-			small: string;
-			medium: string;
-			large: string;
-		};
-		links: {
-			self: string;
-			html: string;
-			photos: string;
-			likes: string;
-		};
-	};
+	user: UnsplashUser;
 }
 
-export interface IUnsplashSearchResponse {
+export interface UnsplashSearchResponse {
 	total: number;
 	total_pages: number;
-	results: IUnsplashPhotos[];
+	results: UnsplashPhotoResponse[];
 }
