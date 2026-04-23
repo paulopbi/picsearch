@@ -5,7 +5,7 @@ import type {
 	IUnsplashPhotos,
 	IUnsplashSearchResponse,
 } from "../../interfaces/index.ts";
-import { API_KEY, BASE_URL, getData } from "../../services/api.ts";
+import { getImages, searchImages } from "../../services/api.ts";
 import ErrorMessage from "../ErrorMessage/ErrorMessage.tsx";
 import Loading from "../Loading/Loading.tsx";
 import PhotoCard from "../PhotoCard/PhotoCard.tsx";
@@ -15,20 +15,15 @@ import PaginationButtons from "./PaginationButtons/PaginationButtons.tsx";
 const Gallery = () => {
 	const [page, setPage] = useState(1);
 	const { queryValue } = useQueryTerm();
-
 	const { data, isLoading, error } = useQuery<
 		IUnsplashPhotos[] | IUnsplashSearchResponse
 	>({
 		queryKey: ["photos", queryValue, page],
 		queryFn: async () => {
 			if (queryValue) {
-				return await getData<IUnsplashSearchResponse>(
-					`${BASE_URL}/search/photos?${API_KEY}&query=${queryValue}&per_page=18&page=${page}`,
-				);
+				return await searchImages(queryValue, page);
 			}
-			return await getData<IUnsplashPhotos[]>(
-				`${BASE_URL}/photos?${API_KEY}&per_page=18&page=${page}`,
-			);
+			return await getImages(page);
 		},
 	});
 
