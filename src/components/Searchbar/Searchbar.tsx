@@ -1,4 +1,4 @@
-import { type ChangeEvent, useState } from "react";
+import { useState } from "react";
 import { useQueryTerm } from "../../context/QueryTermContext.tsx";
 import useDebounce from "../../hooks/useDebounce.tsx";
 import "./Searchbar.css";
@@ -8,21 +8,19 @@ import SearchbarInput from "./SearchbarInput/SearchbarInput.tsx";
 
 const Searchbar = () => {
 	const [search, setSearch] = useState("");
-
 	const { setQueryValue } = useQueryTerm();
 	const debouncedValue = useDebounce(search);
 
 	setQueryValue(debouncedValue);
 
-	const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
-		setSearch(e.target.value);
-	};
-
 	return (
 		<section className="search-container">
 			<SearchbarContent>
 				<SearchbarIcon />
-				<SearchbarInput value={search} handleSearch={handleSearch} />
+				<SearchbarInput
+					value={search}
+					onChange={({ target }) => setSearch(target.value)}
+				/>
 			</SearchbarContent>
 		</section>
 	);
