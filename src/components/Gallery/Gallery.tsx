@@ -55,34 +55,10 @@ const Gallery = () => {
 	return (
 		<div className="container">
 			<div className="gallery">
-				{"results" in data
-					? data.results.map((props) => (
-							<Card key={props.id}>
-								<CardImage {...props} />
-
-								<CardHeader>
-									<CardDownload {...props} />
-								</CardHeader>
-
-								<CardContent>
-									<CardTitle {...props} />
-									<CardUser {...props} />
-								</CardContent>
-							</Card>
-						))
-					: data.map((props) => (
-							<Card key={props.id}>
-								<CardImage {...props} />
-
-								<CardHeader>
-									<CardDownload {...props} />
-								</CardHeader>
-
-								<CardContent>
-									<CardTitle {...props} />
-									<CardUser {...props} />
-								</CardContent>
-							</Card>
+				{Array.isArray(data)
+					? data?.map((props) => <PhotoCard key={props.id} {...props} />)
+					: data?.results?.map((props) => (
+							<PhotoCard key={props.id} {...props} />
 						))}
 			</div>
 
