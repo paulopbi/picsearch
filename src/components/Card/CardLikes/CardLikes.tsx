@@ -1,10 +1,8 @@
 import { Heart } from "lucide-react";
-import type { IUnsplashPhotos } from "../../../interfaces";
+import type { UnsplashPhotoResponse } from "../../../interfaces";
 import "./CardLikes.css";
 
-interface ICardLikes extends IUnsplashPhotos {}
-
-const CardLikes = ({ likes }: ICardLikes) => {
+const CardLikes = ({ likes }: UnsplashPhotoResponse) => {
 	return (
 		<div className="card-header-likes" title={`Likes: ${likes}`}>
 			<Heart size={18} />

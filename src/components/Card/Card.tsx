@@ -1,7 +1,6 @@
-import type { ReactNode } from "react";
 import "./Card.css";
 
-const Card = ({ children }: { children: ReactNode }) => {
+const Card = ({ children }: { children: React.ReactNode }) => {
 	return <div className="card">{children}</div>;
 };
 

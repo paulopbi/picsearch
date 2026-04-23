@@ -1,9 +1,7 @@
-import type { IUnsplashPhotos } from "../../../interfaces";
+import type { UnsplashPhotoResponse } from "../../../interfaces";
 import "./CardImage.css";
 
-interface ICardImage extends IUnsplashPhotos {}
-
-const CardImage = ({ urls, alt_description }: ICardImage) => {
+const CardImage = ({ urls, alt_description }: UnsplashPhotoResponse) => {
 	return (
 		<img
 			className="card-image"

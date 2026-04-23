@@ -1,4 +1,4 @@
-import type { IUnsplashPhotos } from "../../interfaces";
+import type { UnsplashPhotoResponse } from "../../interfaces";
 import Card from "../Card/Card";
 import CardContent from "../Card/CardContent/CardContent";
 import CardDownload from "../Card/CardDownload/CardDownload";
@@ -7,7 +7,7 @@ import CardImage from "../Card/CardImage/CardImage";
 import CardTitle from "../Card/CardTitle/CardTitle";
 import CardUser from "../Card/CardUser/CardUser";
 
-interface IPhotoCard extends IUnsplashPhotos {}
+interface IPhotoCard extends UnsplashPhotoResponse {}
 
 const PhotoCard = ({ ...props }: IPhotoCard) => {
 	return (

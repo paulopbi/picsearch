@@ -1,10 +1,8 @@
-import type { IUnsplashPhotos } from "../../../interfaces";
+import type { UnsplashPhotoResponse } from "../../../interfaces";
 import "./CardTitle.css";
 
-interface ICardTitle extends IUnsplashPhotos {}
-
-const CardTitle = ({ alt_description }: ICardTitle) => {
-	return <h2 className="card-title">{alt_description}</h2>;
+const CardTitle = ({ alt_description }: UnsplashPhotoResponse) => {
+	return <h2 className="card-title">{alt_description ?? "No description"}</h2>;
 };
 
 export default CardTitle;

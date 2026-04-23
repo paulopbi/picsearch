@@ -1,10 +1,8 @@
 import { ImageDown } from "lucide-react";
-import type { IUnsplashPhotos } from "../../../interfaces";
+import type { UnsplashPhotoResponse } from "../../../interfaces";
 import "./CardDownload.css";
 
-interface ICardDownload extends IUnsplashPhotos {}
-
-const CardDownload = ({ links }: ICardDownload) => {
+const CardDownload = ({ links }: UnsplashPhotoResponse) => {
 	return (
 		<a
 			href={links.download}

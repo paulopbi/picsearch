@@ -1,9 +1,7 @@
-import type { IUnsplashPhotos } from "../../../interfaces";
+import type { UnsplashPhotoResponse } from "../../../interfaces";
 import "./CardUser.css";
 
-interface ICardUser extends IUnsplashPhotos {}
-
-const CardUser = ({ user }: ICardUser) => {
+const CardUser = ({ user }: UnsplashPhotoResponse) => {
 	return (
 		<a
 			href={user.links.html}
