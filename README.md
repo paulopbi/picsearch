@@ -9,11 +9,11 @@
   <a href="https://github.com/paulopbi/picsearch" target="_blank">Repository</a>
 </p>
 
-# Picsearch
+<br/>
 
 **Discover** stunning high-quality photos effortlessly, **Picsearch** is crafted from scratch to **ignite** your creativity, **search** for any image you want and **download** it with just a few clicks!
 
-This project uses the **Unsplash API** to get the images, check the [Unsplash docs](https://unsplash.com/docs) to learn more.
+This project uses the public [Unsplash API](https://unsplash.com/docs).
 
 ## Demo
 
